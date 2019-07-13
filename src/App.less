@@ -1,5 +1,49 @@
+//colors
+@background: #f6eee7;
+@white: #ffffff;
+@font-color: #d8bea1; //za sad
+@border-color: #e2ceb8;
+//box shadow
+@main-body-shadow: {
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(102,102,102,0.4);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(102,102,102,0.4);
+  box-shadow: 0px 0px 5px 0px rgba(102,102,102,0.4);
+};
 
+@button-shadow: {
+  -webkit-box-shadow: 0px 0px 2px 0px rgba(102,102,102,0.4);
+  -moz-box-shadow: 0px 0px 2px 0px rgba(102,102,102,0.4);
+  box-shadow: 0px 0px 2px 0px rgba(102,102,102,0.4);
+}
+//components
+.button {
+  border: 0.5px solid @border-color;
+  color: @font-color;
+  background-color: @background;
+  border-radius: 2px;
+  width: 60px; //ovo bih da uklonim, i da bude skalabilno dugme u zavisnosti od velicine
+  padding: 5px;
+  text-align: center;
+  @button-shadow();
+  &:hover {
+    color: @background;
+    background-color: @font-color;
+  }
+};
 
-.app-color {
-  background-color: #123456;
+body {
+  background-color: @background;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+};
+
+.app-container {
+  background-color: @white;
+  left: 20px;
+  right: 20px;
+  top: 20px;
+  bottom: 20px;
+  padding: 20px;
+  position: absolute;
+  @main-body-shadow();
+  border-radius: 2px; //mozda skloniti
 };
