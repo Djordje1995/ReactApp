@@ -1,8 +1,10 @@
 //colors
 @background: #f6eee7;
+@login-header-background: #abcdef;
 @white: #ffffff;
 @font-color: #d8bea1; //za sad
 @border-color: #e2ceb8;
+
 //box shadow
 @main-body-shadow: {
   -webkit-box-shadow: 0px 0px 5px 0px rgba(102,102,102,0.4);
@@ -15,13 +17,23 @@
   -moz-box-shadow: 0px 0px 2px 0px rgba(102,102,102,0.4);
   box-shadow: 0px 0px 2px 0px rgba(102,102,102,0.4);
 }
+
+.padding-top-bottom(@value) {
+  padding-top: @value;
+  padding-bottom: @value;
+};
+
+.field-size(@width, @height) {
+  width: @width;
+  height: @height;
+};
+
 //components
 .button {
   border: 0.5px solid @border-color;
   color: @font-color;
   background-color: @background;
   border-radius: 2px;
-  width: 60px; //ovo bih da uklonim, i da bude skalabilno dugme u zavisnosti od velicine
   padding: 5px;
   text-align: center;
   @button-shadow();
@@ -47,3 +59,44 @@ body {
   @main-body-shadow();
   border-radius: 2px; //mozda skloniti
 };
+
+.login-container {
+  background-color: @white;
+  margin: auto;
+  width: 500px;
+  height: 400px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  @main-body-shadow();
+  border-radius: 2px;
+};
+
+.login-header {
+  text-align: center;
+  background-color: @login-header-background;
+  margin: 0;
+  .padding-top-bottom(10px);
+  border-bottom: 1px solid @border-color;
+};
+
+.login-context {
+  position: relative;
+  margin: 100px;
+}
+
+.form-group {
+  margin: 0;
+  position: relative;
+  margin-bottom: 5px;
+};
+
+.form-field {
+  right: 0;
+  .field-size(200px, 20px);
+  border: 1px solid @border-color;
+  border-radius: 2px;
+  position: absolute;
+}
+
