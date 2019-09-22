@@ -1,12 +1,13 @@
 import React from 'react';
+import Header from './common/Header'
 import '../App.less';
-// import Button from './common/Button';
 
 function HomePage() {
   return (
-    <div className="app-container">
-      {/* <Button/> */}
-    </div>
+    <>
+      <Header />
+      <div className="app-container"/>
+    </>
   );
 }
 

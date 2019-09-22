@@ -1,29 +1,17 @@
-import React, { useState } from 'react';
-// import '../../App.less';
-// import examineeApi from '../../api/ExamineeApi';
+import React from "react";
+import "../../App.less";
 
-function Button(name) {
-
-  // const [user, setUser] = useState([]);
-
-  // var callBack = function (data) {
-  //   setUser(data);
-  //   console.log("uspesno spicio kontroler");
-  // };
-
-  // var getExaminee = function (id) {
-  //    return examineeApi.getExamineeById(id)
-  //             .then(callBack);
-  // };
-
-  // return (
-  //   <>
-  //   <button className="button" onClick={() => setUser(getExaminee(1))}>
-  //     <span>Button</span>
-  //   </button>
-  //   </>
-  // );
-
+function Button(props) {
+  return (
+    <button
+      type={props.type}
+      className={props.className}
+      onClick={props.onClick}
+      id={props.id}
+    >
+      {props.value}
+    </button>
+  );
 }
 
 export default Button;

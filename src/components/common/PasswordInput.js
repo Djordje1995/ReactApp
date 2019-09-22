@@ -10,14 +10,14 @@ function PasswordInput(props) {
   return (
     <div className={wrapperClass}>
       <label htmlFor={props.id}>{props.label}</label>
-        <input
-          id={props.id}
-          type="password"
-          onChange={props.onChange}
-          name={props.name}
-          className="form-field"
-          value={props.value}
-        />
+      <input
+        id={props.id}
+        type="password"
+        onChange={props.onChange}
+        name={props.name}
+        className={props.loginClassName + " form-field"}
+        value={props.value}
+      />
       {props.error && <div className="alert alert-danger">{props.error}</div>}
     </div>
   );
