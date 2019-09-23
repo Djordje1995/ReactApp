@@ -9,6 +9,9 @@ const measurementApi = {
   },
   insertMeasurements: function(data) {
     return axios.post(`${MEASUREMENT_API_URL}/insert`, data);
+  },
+  measurementOverview: function() {
+    return axios.get(`${MEASUREMENT_API_URL}/overview`);
   }
 };
 

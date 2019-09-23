@@ -8,6 +8,24 @@ function TextInput(props) {
   if (props.error.length > 0) {
     wrapperClass += " has-error";
   }
+  let innerClass = "";
+  if (props.styleFilter && props.styleFilter !== "") {
+    wrapperClass = "";
+    innerClass = props.styleFilter;
+  } else {
+    innerClass =
+      props.loginClassName +
+      " form-field " +
+      props.noButtonGroups +
+      " " +
+      props.measurementComment;
+    wrapperClass = props.formGroup
+      ? "form-group " + props.className
+      : props.className;
+    if (props.error.length > 0) {
+      wrapperClass += " has-error";
+    }
+  }
 
   return (
     <div className={wrapperClass}>
@@ -17,14 +35,9 @@ function TextInput(props) {
         type="text"
         onChange={props.onChange}
         name={props.name}
-        className={
-          props.loginClassName +
-          " form-field " +
-          props.noButtonGroups +
-          " " +
-          props.measurementComment
-        }
+        className={innerClass}
         value={props.value}
+        placeholder={props.placeholder}
       />
       {props.error && <div className="alert alert-danger">{props.error}</div>}
     </div>

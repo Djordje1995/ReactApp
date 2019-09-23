@@ -2,7 +2,8 @@
 // @background: #f6eee7;
 @background: #efeee5;
 @background-strong: #dfddcb;
-@login-header-background: #abcdef;
+// @login-header-background: #abcdef;
+@login-header-background: #d0ccb2;
 @white: #ffffff;
 // @font-color: #d8bea1; //za sad
 @font-color: #b0aa7e;
@@ -471,6 +472,7 @@ body {
 
 .table-cell {
   @table-row-border();
+  min-width: 40px;
 }
 
 .alight-right {
@@ -494,7 +496,7 @@ table th:nth-child(4) {
 
 table td:nth-child(2),
 table th:nth-child(2) {
-  text-align: right;
+  text-align: left;
 }
 
 table td:nth-child(6),
@@ -506,6 +508,19 @@ table th:nth-child(7) {
   text-align: center;
 }
 
+#measurementTable th:nth-child(6) {
+  text-align: center;
+}
+
+#measurementTable td:nth-child(6) {
+  text-align: left;
+}
+
+#measurementTable td:nth-child(2),
+#measurementTable th:nth-child(2) {
+  text-align: left;
+}
+
 .export-button {
   position: relative;
   margin-left: 10px;
@@ -513,4 +528,29 @@ table th:nth-child(7) {
   height: 16px;
   font-size: 13px;
   text-decoration: unset;
+}
+
+.magnifying-glass {
+  height: 25px;
+  background-color: white;
+  border: 0.5px solid @border-color;
+  border-left: 0;
+  margin: 0;
+}
+
+.filter-class {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  justify-content: flex-end;
+  right: 0px;
+  margin-left: auto;
+  width: 200px;
+  height: 22px;
+  border: 0.5px solid @border-color;
+  border-right: 0;
+}
+
+.empty-table-row {
+  height: 25px;
 }

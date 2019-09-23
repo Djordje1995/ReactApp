@@ -7,6 +7,7 @@ import UnosIspitanikPage from "./UnosIspitanikPage";
 import UnosMerenjePage from "./UnosMerenjePage";
 import { ProtectedRoute } from "./ProtectedRoute";
 import PretragaStudijaPage from "./PretragaStudijaPage";
+import PretragaIspitanikPage from "./PretragaIspitanikPage";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <Route path="/unosIspitanikPage" component={UnosIspitanikPage} />
       <Route path="/unosMerenjePage" component={UnosMerenjePage} />
       <Route path="/pretragaStudijaPage" component={PretragaStudijaPage} />
+      <Route path="/pretragaIspitanikPage" component={PretragaIspitanikPage} />
       <Route path="*" component={() => "404 NOT FOUND"} />
     </Switch>
   );

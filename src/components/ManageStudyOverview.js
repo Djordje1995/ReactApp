@@ -43,11 +43,9 @@ function ManageStudyOverview() {
     fetchData();
   }, []);
 
-  function exportOverview() {}
-
   return (
     <>
-      <StudyOverview data={data} export={exportOverview} />
+      <StudyOverview data={data} />
     </>
   );
 }

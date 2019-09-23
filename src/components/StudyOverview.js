@@ -21,7 +21,7 @@ function StudyOverview(props) {
         examinee.surname,
         examinee.parentName,
         examinee.age,
-        examinee.date,
+        formatDate(examinee.entryDate),
         examinee.comment
       ];
       dataToExport.push(ee);
@@ -64,6 +64,13 @@ function StudyOverview(props) {
     );
   };
 
+  var formatDate = function(date) {
+    var year = date.slice(0, 4);
+    var month = date.slice(5, 7);
+    var day = date.slice(8, 10);
+    return day + "." + month + "." + year + ".";
+  };
+
   var renderStudyOverviewTable = function() {
     var examinees = [];
     var zebra = true;
@@ -81,7 +88,7 @@ function StudyOverview(props) {
           <td className="table-cell">{examinee.surname}</td>
           <td className="table-cell">{examinee.parentName}</td>
           <td className="table-cell">{examinee.age}</td>
-          <td className="table-cell">{examinee.date}</td>
+          <td className="table-cell">{formatDate(examinee.entryDate)}</td>
           <td className="table-cell">{examinee.comment}</td>
           <td className="table-cell">&#9998;</td>
         </tr>
